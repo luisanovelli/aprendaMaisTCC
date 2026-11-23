@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aprenda+ | Acessibilidade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+
+    <a class="marca" href="index.html">
+        <span class="marca-simbolo">A<span>+</span></span>
+        <span class="marca-texto">
+            <span class="marca-nome">Aprenda +</span>
+            <span class="marca-subtitulo">SENAI IDS</span>
+        </span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a class="ativo" href="acessibilidade.html">Acessibilidade</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar tema escuro">☾</button>
+
+</header>
+
+<main id="conteudo" class="pagina">
+
+    <div class="titulo-pagina reveal">
+
+        <p class="etiqueta">APRENDER É PARA TODOS</p>
+
+        <h1>Acessibilidade</h1>
+
+        <p>
+            Recursos disponíveis para tornar sua experiência mais confortável.
+        </p>
+
+    </div>
+
+    <div class="grade-recursos">
+
+        <section class="cartao-recurso reveal" data-recurso="leitor">
+            <span class="icone-recurso" aria-hidden="true">🔊</span>
+            <div>
+                <h2 id="rec-leitor">Leitor de texto</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Lê em voz alta o texto que você focar ou passar o mouse.</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-leitor"><span></span></button>
+        </section>
+
+        <section class="cartao-recurso reveal reveal-atraso" data-recurso="teclado">
+            <span class="icone-recurso" aria-hidden="true">⌨️</span>
+            <div>
+                <h2 id="rec-teclado">Navegação por teclado</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Reforça o contorno de foco ao navegar com Tab.</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-teclado"><span></span></button>
+        </section>
+
+        <section class="cartao-recurso reveal" data-recurso="voz">
+            <span class="icone-recurso" aria-hidden="true">🎙️</span>
+            <div>
+                <h2 id="rec-voz">Comando de voz</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Diga “cursos”, “perfil”, “início”, “tema escuro”…</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-voz"><span></span></button>
+        </section>
+
+        <section class="cartao-recurso reveal reveal-atraso" data-recurso="autismo">
+            <span class="icone-recurso" aria-hidden="true">🧩</span>
+            <div>
+                <h2 id="rec-autismo">Acessibilidade cognitiva (autismo)</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Remove animações e movimentos para uma tela mais calma.</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-autismo"><span></span></button>
+        </section>
+
+        <section class="cartao-recurso reveal" data-recurso="tdah">
+            <span class="icone-recurso" aria-hidden="true">🧠</span>
+            <div>
+                <h2 id="rec-tdah">Acessibilidade cognitiva (TDAH)</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Tira distrações e destaca só o cartão em foco.</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-tdah"><span></span></button>
+        </section>
+
+        <section class="cartao-recurso reveal reveal-atraso" data-recurso="cor">
+            <span class="icone-recurso" aria-hidden="true">🎨</span>
+            <div>
+                <h2 id="rec-cor">Ajuste de cor</h2>
+                <p class="status status-off" aria-live="polite">Desativado</p>
+                <span class="descricao-recurso">Alto contraste entre texto e fundo.</span>
+            </div>
+            <button type="button" class="alternador" role="switch" aria-checked="false" aria-labelledby="rec-cor"><span></span></button>
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="rodape">
+    <span>Aprenda + · SENAI IDS</span>
+    <span>Seu espaço de aprendizado.</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aprenda+ | Cadastro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+
+    <a class="marca" href="index.html">
+        <span class="marca-simbolo">A<span>+</span></span>
+        <span class="marca-texto">
+            <span class="marca-nome">Aprenda +</span>
+            <span class="marca-subtitulo">SENAI IDS</span>
+        </span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="acessibilidade.html">Acessibilidade</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar tema escuro">☾</button>
+
+</header>
+
+<main class="pagina" id="conteudo">
+
+    <div class="titulo-pagina reveal">
+        <p class="etiqueta" id="login-etiqueta">COMECE AGORA</p>
+        <h1 id="login-titulo">Criar <span>conta</span></h1>
+        <p id="login-subtitulo">Preencha os dados abaixo para montar o seu perfil.</p>
+    </div>
+
+    <form class="formulario reveal" id="form-cadastro">
+
+        <label for="tipoUsuario">Cadastrar como</label>
+        <select id="tipoUsuario" name="tipoUsuario" required>
+            <option value="">Selecione uma opção</option>
+            <option value="aluno">Aluno(a)</option>
+            <option value="professor">Professor(a)</option>
+        </select>
+
+        <label for="nomeUsuario">Nome de Usuário</label>
+        <input type="text" id="nomeUsuario" name="nomeUsuario" placeholder="Insira um nome de usuário" minlength="3" maxlength="30" autocomplete="username" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Insira seu e-mail" autocomplete="email" required>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres" minlength="6" autocomplete="new-password" required>
+
+        <p class="mensagem-form" id="mensagem-cadastro" role="alert"></p>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+    <form class="formulario" id="form-entrar" hidden>
+
+        <label for="entrar-email">E-mail</label>
+        <input type="email" id="entrar-email" name="email" placeholder="Insira seu e-mail" autocomplete="email" required>
+
+        <label for="entrar-senha">Senha</label>
+        <input type="password" id="entrar-senha" name="senha" placeholder="Insira sua senha" autocomplete="current-password" required>
+
+        <p class="mensagem-form" id="mensagem-entrar" role="alert"></p>
+
+        <button type="submit">Entrar</button>
+
+    </form>
+
+    <p class="texto-login" id="alternar-modo">
+        <span id="alternar-texto">Já tem uma conta?</span>
+        <button type="button" id="alternar-botao">Entrar</button>
+    </p>
+
+</main>
+
+<footer class="rodape">
+    <span>Aprenda + · SENAI IDS</span>
+    <span>Seu espaço de aprendizado.</span>
+</footer>
+
+</body>
+</html>

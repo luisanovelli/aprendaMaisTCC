@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aprenda+ | Perfil do Professor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body data-perfil="professor">
+
+<a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho">
+
+    <a class="marca" href="index.html">
+        <span class="marca-simbolo">A<span>+</span></span>
+        <span class="marca-texto">
+            <span class="marca-nome">Aprenda +</span>
+            <span class="marca-subtitulo">SENAI IDS</span>
+        </span>
+    </a>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="acessibilidade.html">Acessibilidade</a></li>
+            <li><a class="ativo" href="perfilprof.html">Perfil</a></li>
+        </ul>
+    </nav>
+
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Ativar tema escuro">☾</button>
+
+</header>
+
+<main class="pagina" id="conteudo">
+
+    <div class="titulo-pagina reveal">
+        <p class="etiqueta">SUA TURMA</p>
+        <h1>Meu perfil</h1>
+    </div>
+
+    <!-- Só aparece depois que o script confirma que há um professor conectado -->
+    <div id="conteudo-professor" hidden>
+
+        <section class="perfil-cartao reveal">
+
+            <div class="avatar-fundo">
+                <img class="avatar" id="perfil-avatar" src="gatos/gato-vermelho.png" alt="Gato vermelho de programação">
+            </div>
+
+            <div>
+                <span class="etiqueta">PERFIL DE PROFESSOR</span>
+                <h2 id="perfil-nome">@NomedePerfil</h2>
+                <p id="perfil-email"></p>
+                <p id="perfil-conexoes">0 amigos · 0 alunos</p>
+
+                <button class="botao-sair" id="botao-sair" type="button">
+                    ↪ Sair da conta
+                </button>
+            </div>
+
+        </section>
+
+        <section class="estatisticas">
+
+            <div class="reveal">
+                <span class="estatistica-icone" aria-hidden="true">♙</span>
+                <strong id="prof-total-alunos">0</strong>
+                <span class="estat-rotulo">alunos na turma</span>
+            </div>
+
+            <div class="reveal reveal-atraso">
+                <span class="estatistica-icone" aria-hidden="true">✦</span>
+                <strong id="prof-media">0%</strong>
+                <span class="estat-rotulo">progresso médio</span>
+            </div>
+
+            <div class="reveal reveal-atraso-2">
+                <span class="estatistica-icone" aria-hidden="true">⌘</span>
+                <strong id="prof-codigo">----</strong>
+                <span class="estat-rotulo">código da turma</span>
+                <button class="botao-copiar" id="botao-copiar" type="button" aria-label="Copiar código da turma">Copiar</button>
+            </div>
+
+        </section>
+
+        <p class="aviso-geral" id="aviso-codigo" role="status" aria-live="polite"></p>
+
+        <section class="cartao-curso cartao-turma reveal" aria-labelledby="titulo-alunos">
+
+            <p class="etiqueta">SUA TURMA</p>
+
+            <h2 id="titulo-alunos">Alunos</h2>
+
+            <p>Adicione seus alunos e acompanhe o progresso de cada um.</p>
+
+            <form class="form-inline" id="form-aluno">
+
+                <div class="campo">
+                    <label for="aluno-nome">Nome do aluno</label>
+                    <input type="text" id="aluno-nome" maxlength="40" placeholder="Ex.: Maria Souza" autocomplete="off" required>
+                </div>
+
+                <div class="campo">
+                    <label for="aluno-curso">Curso</label>
+                    <select id="aluno-curso">
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JAVA">JAVA</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="aluno-progresso">Progresso (%)</label>
+                    <input type="number" id="aluno-progresso" min="0" max="100" value="0" inputmode="numeric">
+                </div>
+
+                <button class="botao-secundario" type="submit">＋ Adicionar</button>
+
+            </form>
+
+            <p class="aviso-form" id="aviso-aluno" role="status" aria-live="polite"></p>
+
+            <p class="vazio" id="vazio-alunos">Nenhum aluno adicionado ainda.</p>
+
+            <ul class="lista-turma" id="lista-alunos"></ul>
+
+        </section>
+
+        <section class="cartao-curso cartao-turma reveal" aria-labelledby="titulo-desempenho">
+
+            <p class="etiqueta">VISÃO GERAL</p>
+
+            <h2 id="titulo-desempenho">Desempenho por curso</h2>
+
+            <div id="desempenho-cursos"></div>
+
+        </section>
+
+        <section class="cartao-curso conexoes reveal" aria-labelledby="titulo-conexoes">
+
+            <p class="etiqueta">SUA REDE</p>
+
+            <h2 id="titulo-conexoes">Conexões</h2>
+
+            <div class="conexao-linha">
+                <span aria-hidden="true">♧</span>
+                <p>Amigos: <strong id="total-amigos">0</strong></p>
+            </div>
+
+            <div class="conexao-linha">
+                <span aria-hidden="true">♙</span>
+                <p>Alunos: <strong id="total-alunos-conexao">0</strong></p>
+            </div>
+
+            <form class="form-inline simples" id="form-amigo">
+
+                <div class="campo">
+                    <label for="amigo-nome">Adicionar amigo</label>
+                    <input type="text" id="amigo-nome" maxlength="40" placeholder="Nome do colega" autocomplete="off" required>
+                </div>
+
+                <button class="botao-secundario" type="submit">＋ Adicionar</button>
+
+            </form>
+
+            <p class="aviso-form" id="aviso-amigo" role="status" aria-live="polite"></p>
+
+            <ul class="lista-turma" id="lista-amigos"></ul>
+
+        </section>
+
+        <section class="cartao-curso escolha-gato reveal">
+
+            <p class="etiqueta">PERSONALIZE</p>
+
+            <h2>Escolha seu gato</h2>
+
+            <p>O gato selecionado será a sua foto de perfil.</p>
+
+<section class="cartao-curso escolha-gato">
+    <p class="etiqueta">PERSONALIZE</p>
+    <h2>Escolha seu avatar</h2>
+    <p>Selecione o personagem que representará seu perfil.</p>
+
+    <fieldset class="seletor-gato" id="seletor-avatar-professor">
+        <legend class="somente-leitor">Escolha seu avatar</legend>
+
+        <label class="opcao-gato">
+            <input type="radio" name="avatarProfessor" value="professora">
+            <span class="opcao-imagem">
+                <img src="gatoProfessora.png" alt="Gatinha professora">
+            </span>
+            <span class="opcao-nome">Professora</span>
+        </label>
+
+        <label class="opcao-gato">
+            <input type="radio" name="avatarProfessor" value="professor">
+            <span class="opcao-imagem">
+                <img src="gatoProfessor.png" alt="Gatinho professor">
+            </span>
+            <span class="opcao-nome">Professor</span>
+        </label>
+    </fieldset>
+
+    <p class="aviso-gato" id="aviso-avatar-professor" role="status"></p>
+</section>
+            </fieldset>
+
+            <p class="aviso-gato" id="aviso-gato" role="status" aria-live="polite"></p>
+
+        </section>
+
+    </div>
+
+</main>
+
+<footer class="rodape">
+    <span>Aprenda + · SENAI IDS</span>
+    <span>Seu espaço de aprendizado.</span>
+</footer>
+
+</body>
+</html>
